@@ -14,3 +14,16 @@
  *= require_self
  */
 @import "materialize";
+.page_background {
+  height: 640px;
+  background-color: black;
+}
+.login_form_container {
+  padding: 10%;
+  border-radius: 5%;
+  background-color: white;
+}
+
+.login {
+  padding-top: 15%;
+}
