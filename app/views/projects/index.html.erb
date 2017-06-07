@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col s5"></div>
+  <div class="col s5"></div>
+  <div class="col s2">
+    <a id="notice"><%= notice %></a>
+  </div>
+</div>
+<div class="row" id="intro">
+  <div class="col s5">
+     <h4>Serviços Cadastrados</h4>
+  </div>
+  <div class="col s2">
+    <div class="add_button">
+      <a class="btn-floating btn-large" href="/projects/new">
+        <i class="material-icons">add</i>
+      </a>
+    </div>
+  </div>
+  <div class="col s5">
+  </div>
+</div>
+<div class="row">
+      <table>
+        <thead>
+          <tr>
+            <th>Project name</th>
+            <th>First contact</th>
+            <th>Signature date</th>
+            <th>Project value</th>
+            <th>Project conclusion date</th>
+            <th>Expected conclusion date</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @projects.each do |project| %>
+            <tr>
+              <td><%= project.project_name %></td>
+              <td><%= project.first_contact %></td>
+              <td><%= project.signature_date %></td>
+              <td><%= project.project_value %></td>
+              <td><%= project.project_conclusion_date %></td>
+              <td><%= project.expected_conclusion_date %></td>
+              <td><%= link_to 'Show', project %></td>
+              <td><%= link_to 'Edit', edit_project_path(project) %></td>
+              <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+
+<br>

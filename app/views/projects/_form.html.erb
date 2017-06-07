@@ -1,0 +1,60 @@
+<%= form_for(project) do |f| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+      <ul>
+      <% project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= label_tag 'Nome do Projeto' %>
+    <%= f.text_field :project_name %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'Tipo de serviço' %>
+    <%= f.text_field :project_value %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'Gerente do projeto' %>
+    <%= f.text_field :project_value %>
+  </div>
+
+
+  <div class="field">
+    <%= label_tag 'Valor do projeto' %>
+    <%= f.text_field :project_value %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'Data do primeiro contato' %>
+    <%= f.text_field :first_contact, class: "datepicker" %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'Data de assinatura do contrato' %>
+    <%= f.text_field :signature_date, class: "datepicker" %>
+  </div>
+
+
+  <div class="field">
+    <%= label_tag 'Data prevista para finalização' %>
+    <%= f.text_field :expected_conclusion_date, class: "datepicker" %>
+  </div>
+
+  <div class="actions">
+  <a class="waves-effect waves-light btn"><%= f.submit "Salvar Serviço" %></a>
+  </div>
+<% end %>
+
+<script>
+$('.datepicker').pickadate({
+  selectMonths: true, // Creates a dropdown to control month
+  selectYears: 15 // Creates a dropdown of 15 years to control year
+});
+</script>

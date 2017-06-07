@@ -16,6 +16,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'materialize-sass'
+gem 'material_icons'
 
 group :development, :test do
   gem 'byebug', platform: :mri

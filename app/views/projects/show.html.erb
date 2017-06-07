@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project name:</strong>
+  <%= @project.project_name %>
+</p>
+
+<p>
+  <strong>First contact:</strong>
+  <%= @project.first_contact %>
+</p>
+
+<p>
+  <strong>Signature date:</strong>
+  <%= @project.signature_date %>
+</p>
+
+<p>
+  <strong>Project value:</strong>
+  <%= @project.project_value %>
+</p>
+
+<p>
+  <strong>Project conclusion date:</strong>
+  <%= @project.project_conclusion_date %>
+</p>
+
+<p>
+  <strong>Expected conclusion date:</strong>
+  <%= @project.expected_conclusion_date %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

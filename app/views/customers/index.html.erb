@@ -5,6 +5,11 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
+      <th>Cnpj</th>
+      <th>Email</th>
+      <th>Telephone</th>
+      <th>Fantasy name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +17,11 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.cnpj %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.telephone %></td>
+        <td><%= customer.fantasy_name %></td>
         <td><%= link_to 'Show', customer %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_name: MyString
+  first_contact: 2017-06-07
+  signature_date: 2017-06-07
+  project_value: 1.5
+  project_conclusion_date: 2017-06-07
+  expected_conclusion_date: 2017-06-07
+
+two:
+  project_name: MyString
+  first_contact: 2017-06-07
+  signature_date: 2017-06-07
+  project_value: 1.5
+  project_conclusion_date: 2017-06-07
+  expected_conclusion_date: 2017-06-07

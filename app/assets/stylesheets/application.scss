@@ -12,18 +12,26 @@
  *
  *= require_tree .
  *= require_self
+ *= require material_icons
  */
 @import "materialize";
 .page_background {
-  height: 720px;
-  background-color: black;
-}
-.login-register_form_container {
-  padding: 10%;
-  border-radius: 5%;
   background-color: white;
 }
 
 .login-register {
   padding-top: 15%;
+}
+
+.nav-wrapper {
+  background-color: #343477;
+}
+
+.add_button {
+  margin-top: 5%;
+  margin-left: -30%;
+}
+
+#intro {
+  height: 80px;
 }
