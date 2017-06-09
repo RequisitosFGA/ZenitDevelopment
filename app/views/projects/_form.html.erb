@@ -10,45 +10,61 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= label_tag 'Nome do Projeto' %>
-    <%= f.text_field :project_name %>
+
+<div class="row">
+  <div class="col s6">
+    <div class="field">
+      <%= label_tag 'Nome do Projeto' %>
+      <%= f.text_field :project_name %>
+    </div>
+
+    <div class="field">
+      <%= label_tag 'Tipo de serviço' %>
+      <%= f.select :service_id, Service.all.collect {|f| [ "#{f.name}", f.id ]}%>
+
+    </div>
+
+      <div class="field">
+        <%= label_tag 'Cliente associado' %>
+        <%= f.select :customer_id, Customer.all.collect {|f| [ "#{f.name}", f.id ]} %>
+      </div>
+
+
+    <div class="field">
+      <%= label_tag 'Gerente do projeto' %>
+      <%= f.select :user_id, User.all.collect {|f| [ "#{f.user_name}", f.id ] }%>
+      <br>
+    </div>
   </div>
 
-  <div class="field">
-    <%= label_tag 'Tipo de serviço' %>
-    <%= f.text_field :project_value %>
+  <div class="col s6">
+
+        <div class="field">
+          <%= label_tag 'Valor do projeto' %>
+          <%= f.text_field :project_value %>
+        </div>
+
+      <div class="field">
+        <%= label_tag 'Data do primeiro contato' %>
+        <%= f.text_field :first_contact, class: "datepicker" %>
+      </div>
+
+      <div class="field">
+        <%= label_tag 'Data de assinatura do contrato' %>
+        <%= f.text_field :signature_date, class: "datepicker" %>
+      </div>
+
+
+      <div class="field">
+        <%= label_tag 'Data prevista para finalização' %>
+        <%= f.text_field :expected_conclusion_date, class: "datepicker" %>
+      </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= label_tag 'Gerente do projeto' %>
-    <%= f.text_field :project_value %>
-  </div>
-
-
-  <div class="field">
-    <%= label_tag 'Valor do projeto' %>
-    <%= f.text_field :project_value %>
-  </div>
-
-  <div class="field">
-    <%= label_tag 'Data do primeiro contato' %>
-    <%= f.text_field :first_contact, class: "datepicker" %>
-  </div>
-
-  <div class="field">
-    <%= label_tag 'Data de assinatura do contrato' %>
-    <%= f.text_field :signature_date, class: "datepicker" %>
-  </div>
-
-
-  <div class="field">
-    <%= label_tag 'Data prevista para finalização' %>
-    <%= f.text_field :expected_conclusion_date, class: "datepicker" %>
-  </div>
 
   <div class="actions">
-  <a class="waves-effect waves-light btn"><%= f.submit "Salvar Serviço" %></a>
+  <a class="waves-effect waves-light btn"><%= f.submit "Salvar Projeto" %></a>
   </div>
 <% end %>
 
@@ -56,5 +72,9 @@
 $('.datepicker').pickadate({
   selectMonths: true, // Creates a dropdown to control month
   selectYears: 15 // Creates a dropdown of 15 years to control year
+});
+
+$(document).ready(function() {
+    $('select').material_select();
 });
 </script>

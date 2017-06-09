@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @customer.name %>
 </p>
 
 <p>
-  <strong>Cnpj:</strong>
+  <strong>CNPJ ou CPF:</strong>
   <%= @customer.cnpj %>
 </p>
 
@@ -16,14 +16,14 @@
 </p>
 
 <p>
-  <strong>Telephone:</strong>
+  <strong>Telefone</strong>
   <%= @customer.telephone %>
 </p>
 
 <p>
-  <strong>Fantasy name:</strong>
+  <strong>Nome Fantasia:</strong>
   <%= @customer.fantasy_name %>
 </p>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to 'Editar', edit_customer_path(@customer) %> |
+<%= link_to 'Voltar', customers_path %>

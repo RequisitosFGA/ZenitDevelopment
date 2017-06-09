@@ -1,34 +1,53 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Project name:</strong>
+  <strong>Nome do Projeto:</strong>
   <%= @project.project_name %>
 </p>
 
 <p>
-  <strong>First contact:</strong>
-  <%= @project.first_contact %>
+  <strong>Tipo de Serviço:</strong>
+  <% @service = Service.find(@project.service_id) %>
+  <%= @service.name%>
 </p>
 
 <p>
-  <strong>Signature date:</strong>
-  <%= @project.signature_date %>
+  <strong>Cliente Associado:</strong>
+  <% @customer = Customer.find(@project.customer_id) %>
+  <%= @customer.name%>
 </p>
 
 <p>
-  <strong>Project value:</strong>
+  <strong>Gerente do Projeto:</strong>
+  <% @user = User.find(@project.user_id) %>
+  <%= @user.user_name%>
+</p>
+
+<p>
+  <strong>Valor do Projeto:</strong>
   <%= @project.project_value %>
 </p>
 
 <p>
-  <strong>Project conclusion date:</strong>
-  <%= @project.project_conclusion_date %>
+  <strong>Data de Primeiro Contato:</strong>
+  <%= @project.first_contact %>
 </p>
 
 <p>
-  <strong>Expected conclusion date:</strong>
+  <strong>Data de Assinatura:</strong>
+  <%= @project.signature_date %>
+</p>
+
+<p>
+  <strong>Data Prevista de conclusão:</strong>
   <%= @project.expected_conclusion_date %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<p>
+  <strong>Data Real de conclusão:</strong>
+  <%= @project.project_conclusion_date %>
+</p>
+
+
+<%= link_to 'Editar', edit_project_path(@project) %> |
+<%= link_to 'Voltar', projects_path %>

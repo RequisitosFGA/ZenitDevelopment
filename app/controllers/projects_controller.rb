@@ -15,6 +15,11 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    @services = Service.all.collect{ |service| [ "#{service.name}", service.id ]}
+    @customers = Customer.all.collect{ |customer| customer.name}
+    @users = User.all.collect{ |user| user.user_name}
+    @service_id = params[:service]
+
   end
 
   # GET /projects/1/edit
@@ -69,6 +74,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:project_name, :first_contact, :signature_date, :project_value, :project_conclusion_date, :expected_conclusion_date)
+      params.require(:project).permit(:project_name, :first_contact, :signature_date, :project_value, :project_conclusion_date, :expected_conclusion_date, :customer_id, :user_id, :service_id)
     end
 end

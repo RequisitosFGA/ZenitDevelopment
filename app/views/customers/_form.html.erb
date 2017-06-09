@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= label_tag 'Nome do Cliente' %>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :cnpj %>
+    <%= label_tag 'CNPJ ou CPF' %>
     <%= f.text_field :cnpj %>
   </div>
 
   <div class="field">
-    <%= f.label :email %>
+    <%= label_tag 'Email' %>
     <%= f.text_field :email %>
   </div>
 
   <div class="field">
-    <%= f.label :telephone %>
+    <%= label_tag 'Telefone' %>
     <%= f.text_field :telephone %>
   </div>
 
   <div class="field">
-    <%= f.label :fantasy_name %>
+    <%= label_tag 'Nome Fantasia (Caso possua)' %>
     <%= f.text_field :fantasy_name %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+  <a class="waves-effect waves-light btn"><%= f.submit "Salvar Cliente" %></a>
   </div>
 <% end %>
